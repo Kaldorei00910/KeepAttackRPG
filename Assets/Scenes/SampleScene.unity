@@ -251,7 +251,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &477317980
 Transform:
   m_ObjectHideFlags: 0
@@ -328,7 +328,6 @@ MonoBehaviour:
   Hp: 500000
   grade: 0
   Speed: 0.5
-  EnemyTransform: {fileID: 477317980}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1560,7 +1559,7 @@ Animator:
   m_GameObject: {fileID: 9170435547744353694}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: -5830349608284946158, guid: c5aecfebc1ef93748a4e8d1a07ef0dec, type: 3}
+  m_Controller: {fileID: 9100000, guid: c48b500b15f8f2a448389998a12ac433, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

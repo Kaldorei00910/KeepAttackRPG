@@ -10,7 +10,7 @@ public class BattleManager : MonoBehaviour
     public void CreateMonster(int StageNum)
     {
         EnemyPrefab = GameManager.Instance.ObjectPool.SpawnFromPool("Enemy");
-
+        
     }
 
     private void ParsingData()

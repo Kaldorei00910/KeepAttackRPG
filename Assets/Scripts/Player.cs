@@ -18,9 +18,6 @@ public class Player : MonoBehaviour
         StartCoroutine(AttackStance());
     }
 
-
-    
-
     IEnumerator AttackStance()
     {
         while (true)

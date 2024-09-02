@@ -4,30 +4,34 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public int Hp = 50000;
+    public int Hp = 50;
     public Enum.Grade grade = Enum.Grade.Normal;
     public float Speed = 0.5f;
 
-    public Transform EnemyTransform;
-    private Vector3 MoveVector;
+    private Vector3 MoveVector = Vector3.left;
 
     private bool isMoving = true;
 
     private void OnEnable()
     {
         isMoving = true;
-        MoveVector = new Vector3(-Speed, 0, 0);
+        StartCoroutine(ActionSequence());
+
     }
-    //private void Update()
-    //{
-    //    while (isMoving)
-    //    {
-    //        EnemyTransform.position -= MoveVector*Time.deltaTime;
-    //    }
-    //}
+    
+    private IEnumerator ActionSequence()
+    {
+        while (isMoving)//이동 상황
+        {
+            transform.position += MoveVector * Speed * Time.deltaTime;
+            yield return null;
+        }
+        //정지상황(플레이어 공격상황)
+        yield return null;
+
+    }
 
 
-    //플레이어에게 공격받았을 때, 사망했을 때
     public void OnDamaged()
     {
         isMoving = false;
