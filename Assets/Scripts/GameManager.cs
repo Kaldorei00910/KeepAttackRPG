@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 
     private Player _player;
     public Player Player { get { return _player; } set { _player = value; } }
+
+    private int StageNum = 0;
     public ObjectPool ObjectPool { get; private set; }
 
 
@@ -42,6 +44,27 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        Application.targetFrameRate = 60;
+    }
 
+    public void MonsterDead()
+    {
+        StageNum++;
+        if(StageNum > 5)
+        {
+            GameWin();
+        }
+        else
+        {
+            //ObjectPool.SpawnFromPool("Enemy");//해당 부분은 데이터 파싱부분과 연계할 예정
+        }
+    }
+
+    public void GameWin()
+    {
+
+    }
 
 }
