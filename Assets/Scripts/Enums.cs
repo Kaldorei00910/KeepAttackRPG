@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class Enum 
+public class Enums 
 {
     public enum Grade
     {

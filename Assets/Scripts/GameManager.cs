@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public Player Player { get { return _player; } set { _player = value; } }
 
     private int StageNum = 0;
-    public ObjectPool ObjectPool { get; private set; }
+    public ObjectPool ObjectPool { get;  set; }
 
 
 

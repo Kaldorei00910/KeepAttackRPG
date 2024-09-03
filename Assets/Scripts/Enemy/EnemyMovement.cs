@@ -6,6 +6,11 @@ public class EnemyMovement : MonoBehaviour
 {
     private bool isMoving = true;
 
+    private void OnEnable()
+    {
+        isMoving = true;
+        
+    }
 
     public void StartAction(float speed)
     {

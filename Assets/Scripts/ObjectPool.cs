@@ -16,6 +16,7 @@ public class ObjectPool : MonoBehaviour
 
     private void Awake()
     {
+        GameManager.Instance.ObjectPool = this;
         PoolDictionary = new Dictionary<string, Queue<GameObject>>();
 
         foreach (var pool in pools)

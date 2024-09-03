@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
 {
     public int MaxHp = 200;
     public int Hp = 200;
-    public Enum.Grade grade = Enum.Grade.Normal;
+    public Enums.Grade grade = Enums.Grade.Normal;
     public float Speed = 0.5f;
 
     public EnemyMovement Movement;
