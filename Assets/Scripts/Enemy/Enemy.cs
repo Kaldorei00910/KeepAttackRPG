@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,7 +9,7 @@ public class Enemy : MonoBehaviour
 {
     public int MaxHp = 200;
     public int Hp = 200;
-    public Enums.Grade grade = Enums.Grade.Normal;
+    public Enums.Grade grade = Enums.Grade.¿œπ›;
     public float Speed = 0.5f;
 
     public EnemyMovement Movement;
@@ -16,14 +17,17 @@ public class Enemy : MonoBehaviour
     public Slider HpBar;
     public TextMeshProUGUI HpText;
 
+
+
     private void OnEnable()
     {
+        //Hp = MaxHp;
+
         UpdateHpBar();
         Movement.StartAction(Speed);
-        
-        Hp = MaxHp;
+
     }
-    
+
 
     public void OnDamaged()
     {

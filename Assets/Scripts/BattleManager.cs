@@ -26,9 +26,9 @@ public class BattleManager : MonoBehaviour
 
         enemy.name = elements[StageNum][0];
         enemy.grade = (Grade)Enum.Parse(typeof(Grade), elements[StageNum][1]);
-        enemy.Speed = int.Parse(elements[StageNum][2]);
+        enemy.Speed = float.Parse(elements[StageNum][2]);
         enemy.MaxHp = int.Parse(elements[StageNum][3]);
-
+        enemy.Hp = enemy.MaxHp;
         enemy.transform.position = SpawnLocationTransform.position;
         EnemyPrefab.SetActive(true);
     }
