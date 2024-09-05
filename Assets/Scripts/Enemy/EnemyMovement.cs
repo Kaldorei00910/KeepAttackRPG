@@ -4,13 +4,8 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    private bool isMoving = true;
+    public bool isMoving = true;
 
-    private void OnEnable()
-    {
-        isMoving = true;
-        
-    }
 
     public void StartAction(float speed)
     {
@@ -30,5 +25,10 @@ public class EnemyMovement : MonoBehaviour
     public void StopMove()
     {
         isMoving = false;
+    }
+    public void OnContacted()
+    {
+        isMoving = false;
+
     }
 }

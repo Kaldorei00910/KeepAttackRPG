@@ -13,10 +13,16 @@ public class BattleManager : MonoBehaviour
     public TextAsset csvData;
     private string[] datas;
     private string[][] elements;
-   
+
+    private void Awake()
+    {
+        GameManager.Instance.BattleManager = this;
+    }
+
     private void Start()
     {
         ParsingData();
+        CreateMonster(GameManager.Instance.StageNum);
     }
 
     public void CreateMonster(int StageNum)
@@ -24,11 +30,10 @@ public class BattleManager : MonoBehaviour
         GameObject EnemyPrefab = GameManager.Instance.ObjectPool.SpawnFromPool("Enemy");
         Enemy enemy = EnemyPrefab.GetComponent<Enemy>();
 
-        enemy.name = elements[StageNum][0];
-        enemy.grade = (Grade)Enum.Parse(typeof(Grade), elements[StageNum][1]);
+        enemy.Name = elements[StageNum][0];
+        enemy.Grade = (Grade)Enum.Parse(typeof(Grade), elements[StageNum][1]);
         enemy.Speed = float.Parse(elements[StageNum][2]);
         enemy.MaxHp = int.Parse(elements[StageNum][3]);
-        enemy.Hp = enemy.MaxHp;
         enemy.transform.position = SpawnLocationTransform.position;
         EnemyPrefab.SetActive(true);
     }

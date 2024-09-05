@@ -10,8 +10,10 @@ public class GameManager : MonoBehaviour
     private Player _player;
     public Player Player { get { return _player; } set { _player = value; } }
 
-    private int StageNum = 0;
-    public ObjectPool ObjectPool { get;  set; }
+    public int StageNum = 1;
+    public ObjectPool ObjectPool;
+    public BattleManager BattleManager;
+
 
 
 
@@ -58,7 +60,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            //ObjectPool.SpawnFromPool("Enemy");//해당 부분은 데이터 파싱부분과 연계할 예정
+            BattleManager.CreateMonster(StageNum);
         }
     }
 

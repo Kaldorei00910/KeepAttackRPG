@@ -28,23 +28,25 @@ public class Player : MonoBehaviour
     {
         while (true)
         {
-            MonsterCollider = Physics2D.OverlapCircle(this.gameObject.transform.position,radius,1<<6);
+            MonsterCollider = Physics2D.OverlapCircle (this.gameObject.transform.position,radius,1<<6);
 
             if (MonsterCollider != null )
             {
+                MonsterCollider.SendMessage("OnContacted", SendMessageOptions.DontRequireReceiver);
+                animator.SetBool("IsIdle", false);
+                animator.SetTrigger("PlayerAttackTrigger");
+
                 while (IsAnimating)
                 {
                     yield return null;
                 }
-                animator.SetTrigger("PlayerAttackTrigger");
-
                 //애니메이션 이벤트를 통해 몬스터 공격
-
+                animator.SetBool("IsIdle", true);
                 yield return new WaitForSeconds(AtkSpd);
             }
             else
             {
-                animator.SetTrigger("PlayerIdleTrigger");
+                animator.SetBool("IsIdle", true);
                 yield return null;
             }
         }

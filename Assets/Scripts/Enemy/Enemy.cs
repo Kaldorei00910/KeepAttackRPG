@@ -7,9 +7,10 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
+    public string Name = "Test";
     public int MaxHp = 200;
     public int Hp = 200;
-    public Enums.Grade grade = Enums.Grade.일반;
+    public Enums.Grade Grade = Enums.Grade.일반;
     public float Speed = 0.5f;
 
     public EnemyMovement Movement;
@@ -21,7 +22,8 @@ public class Enemy : MonoBehaviour
 
     private void OnEnable()
     {
-        //Hp = MaxHp;
+        Hp = MaxHp;
+        Movement.isMoving = true;
 
         UpdateHpBar();
         Movement.StartAction(Speed);
@@ -31,7 +33,7 @@ public class Enemy : MonoBehaviour
 
     public void OnDamaged()
     {
-        Movement.StopMove();
+        Movement.StopMove(); 
 
         Hp -= GameManager.Instance.Player.AtkDamage;
         if(Hp <= 0)
@@ -44,6 +46,7 @@ public class Enemy : MonoBehaviour
     private void OnDead()
     {
         GameManager.Instance.MonsterDead();
+        GameManager.Instance.Player.MonsterCollider = null;
         gameObject.SetActive(false);
     }
 
