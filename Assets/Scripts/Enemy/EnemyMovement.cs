@@ -6,7 +6,6 @@ public class EnemyMovement : MonoBehaviour
 {
     public bool isMoving = true;
 
-
     public void StartAction(float speed)
     {
         StartCoroutine(ActionSequence(speed));
@@ -26,9 +25,5 @@ public class EnemyMovement : MonoBehaviour
     {
         isMoving = false;
     }
-    public void OnContacted()
-    {
-        isMoving = false;
 
-    }
 }

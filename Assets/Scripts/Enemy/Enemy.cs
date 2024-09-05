@@ -4,20 +4,21 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class Enemy : MonoBehaviour
 {
     public string Name = "Test";
     public int MaxHp = 200;
     public int Hp = 200;
-    public Enums.Grade Grade = Enums.Grade.일반;
+    public Enums.Grade ThisGrade = Enums.Grade.일반;
     public float Speed = 0.5f;
 
     public EnemyMovement Movement;
 
     public Slider HpBar;
     public TextMeshProUGUI HpText;
-
+    public Animator animator;
 
 
     private void OnEnable()
@@ -33,8 +34,7 @@ public class Enemy : MonoBehaviour
 
     public void OnDamaged()
     {
-        Movement.StopMove(); 
-
+        animator.SetBool("IsAttack",true);
         Hp -= GameManager.Instance.Player.AtkDamage;
         if(Hp <= 0)
             OnDead();
@@ -47,6 +47,8 @@ public class Enemy : MonoBehaviour
     {
         GameManager.Instance.MonsterDead();
         GameManager.Instance.Player.MonsterCollider = null;
+        animator.SetBool("IsAttack", false);
+
         gameObject.SetActive(false);
     }
 
@@ -55,5 +57,16 @@ public class Enemy : MonoBehaviour
     {
         HpBar.value = (float)Hp/MaxHp;
         HpText.text = $"{Hp}/{MaxHp}";
+    }
+
+    public void OnContacted()
+    {
+        Movement.StopMove();
+
+    }
+
+    private void OnMouseDown()
+    {
+        BattleUIManager.Instance.ChangeInfo(Name, ThisGrade.ToString(), Speed, MaxHp);
     }
 }

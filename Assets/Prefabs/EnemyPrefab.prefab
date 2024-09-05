@@ -1,37 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1484965365008175594
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4108335775319009232}
-  m_Layer: 0
-  m_Name: Sprite
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4108335775319009232
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1484965365008175594}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2955271347882056949}
-  m_Father: {fileID: 8946322875130476985}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2375719636261443800
 GameObject:
   m_ObjectHideFlags: 0
@@ -44,7 +12,7 @@ GameObject:
   - component: {fileID: 8898977167190805882}
   - component: {fileID: 204542853185854463}
   m_Layer: 0
-  m_Name: Skeleton
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58,12 +26,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2375719636261443800}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4108335775319009232}
+  m_Father: {fileID: 8946322875130476985}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8898977167190805882
 SpriteRenderer:
@@ -111,7 +79,7 @@ SpriteRenderer:
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.26, y: 0.18}
+  m_Size: {x: 0.32, y: 0.31}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -127,7 +95,7 @@ Animator:
   m_GameObject: {fileID: 2375719636261443800}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 980459581498824386, guid: 56a21f57e9684784dbf8a2df42c01ee4, type: 3}
+  m_Controller: {fileID: 9100000, guid: 9755bebbd16a64948a505ea08f46ca55, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -610,7 +578,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4108335775319009232}
+  - {fileID: 2955271347882056949}
   - {fileID: 7608766356313037150}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -671,13 +639,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3062f4a9dd9f7bb4ba6ee66b004682b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Name: Test
   MaxHp: 200
   Hp: 200
-  grade: 0
+  Grade: 0
   Speed: 0.5
   Movement: {fileID: 3991999584738143579}
   HpBar: {fileID: 8413386627593072750}
   HpText: {fileID: 4737856328212846795}
+  animator: {fileID: 204542853185854463}
 --- !u!114 &3991999584738143579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -690,3 +660,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a20e696553ff0bf41ac1e838b5fe4ed1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isMoving: 1

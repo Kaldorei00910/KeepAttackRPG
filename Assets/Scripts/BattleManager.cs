@@ -31,10 +31,11 @@ public class BattleManager : MonoBehaviour
         Enemy enemy = EnemyPrefab.GetComponent<Enemy>();
 
         enemy.Name = elements[StageNum][0];
-        enemy.Grade = (Grade)Enum.Parse(typeof(Grade), elements[StageNum][1]);
+        enemy.ThisGrade = (Grade)Enum.Parse(typeof(Grade), elements[StageNum][1]);
         enemy.Speed = float.Parse(elements[StageNum][2]);
         enemy.MaxHp = int.Parse(elements[StageNum][3]);
         enemy.transform.position = SpawnLocationTransform.position;
+        EnemyPrefab.GetComponentInChildren<Animator>().runtimeAnimatorController = MonsterAnimators[StageNum-1];
         EnemyPrefab.SetActive(true);
     }
 
