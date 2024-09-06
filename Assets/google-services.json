@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "215507572363",
+    "project_id": "unitybasetest",
+    "storage_bucket": "unitybasetest.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:215507572363:android:4931d61bd1a394569be68e",
+        "android_client_info": {
+          "package_name": "com.testbase.KeepAttackRPG"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "215507572363-qqm3i8n0h0ski7nllb9ikroq5vpjnctp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDw_qWwneSeBYYTY5r2DcTGmTxYuXAANr0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "215507572363-qqm3i8n0h0ski7nllb9ikroq5vpjnctp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
