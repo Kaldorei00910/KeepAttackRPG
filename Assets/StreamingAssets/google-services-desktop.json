@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "215507572363",
+    "firebase_url": "https://unitybasetest-default-rtdb.firebaseio.com",
     "project_id": "unitybasetest",
     "storage_bucket": "unitybasetest.appspot.com"
   },

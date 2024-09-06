@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+
 public class GameManager : MonoBehaviour
 {
     public static GameManager _instance;
@@ -13,7 +14,6 @@ public class GameManager : MonoBehaviour
     public int StageNum = 1;
     public ObjectPool ObjectPool;
     public BattleManager BattleManager;
-
 
 
 
@@ -68,5 +68,7 @@ public class GameManager : MonoBehaviour
     {
 
     }
+
+
 
 }
