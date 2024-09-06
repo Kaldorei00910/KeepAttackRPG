@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public int StageNum = 1;
     public ObjectPool ObjectPool;
     public BattleManager BattleManager;
-
+    public GameObject WinPanel;
 
 
 
@@ -66,7 +66,8 @@ public class GameManager : MonoBehaviour
 
     public void GameWin()
     {
-
+        Debug.Log("°ÔÀÓ½Â¸®");
+        WinPanel.SetActive(true);
     }
 
 }

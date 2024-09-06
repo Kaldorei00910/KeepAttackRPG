@@ -6,7 +6,11 @@ public class PlayerAnimationEventTrigger : MonoBehaviour
 {
     public void OnAttackEvent()
     {
-        GameManager.Instance.Player.MonsterCollider.SendMessage("OnDamaged", SendMessageOptions.DontRequireReceiver);
+        if(GameManager.Instance.Player.MonsterCollider != null)
+        {
+            GameManager.Instance.Player.MonsterCollider.SendMessage("OnDamaged", SendMessageOptions.DontRequireReceiver);
+
+        }
     }
 
 }

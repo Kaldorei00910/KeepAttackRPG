@@ -34,7 +34,6 @@ public class Enemy : MonoBehaviour
 
     public void OnDamaged()
     {
-        animator.SetBool("IsAttack",true);
         Hp -= GameManager.Instance.Player.AtkDamage;
         if(Hp <= 0)
             OnDead();
@@ -45,9 +44,9 @@ public class Enemy : MonoBehaviour
 
     private void OnDead()
     {
-        GameManager.Instance.MonsterDead();
         GameManager.Instance.Player.MonsterCollider = null;
         animator.SetBool("IsAttack", false);
+        GameManager.Instance.MonsterDead();
 
         gameObject.SetActive(false);
     }
@@ -62,6 +61,7 @@ public class Enemy : MonoBehaviour
     public void OnContacted()
     {
         Movement.StopMove();
+        animator.SetBool("IsAttack", true);
 
     }
 
